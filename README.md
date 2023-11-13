@@ -1,66 +1,42 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Portfólio de Numismática
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Bem-vindo ao meu projeto de Numismática! Este repositório é dedicado à exibição e documentação da minha coleção de moedas e cédulas, refletindo a minha paixão pela história e pela arte da cunhagem.
 
-## About Laravel
+## Sobre o Projeto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Este projeto é uma exploração pessoal do mundo da numismática. Inclui uma coleção diversificada de moedas e cédulas de diferentes épocas e regiões, com um foco especial em [inserir foco específico, como moedas antigas, cédulas raras, etc.].
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Objetivos
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   Documentar e catalogar minha coleção de moedas e cédulas.
+-   Compartilhar conhecimentos e descobertas sobre a história da numismática.
+-   Conectar com outros entusiastas e especialistas em numismática.
 
-## Learning Laravel
+## Coleção
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Aqui, você encontrará informações detalhadas sobre itens selecionados da minha coleção. Cada item inclui:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   Imagens de alta qualidade da moeda ou cédula.
+-   Uma descrição detalhada, incluindo o ano de cunhagem, origem e características únicas.
+-   Contexto histórico e significado cultural, se aplicável.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Destaques da Coleção
 
-## Laravel Sponsors
+[Inserir descrições breves de algumas peças-chave da coleção, com links para páginas ou seções mais detalhadas.]
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Recursos Adicionais
 
-### Premium Partners
+-   **Artigos e Pesquisas**: Uma seção com artigos escritos por mim ou outros especialistas, explorando diferentes aspectos da numismática.
+-   **Links Úteis**: Recursos online para aprender mais sobre numismática.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Contribuições e Contato
 
-## Contributing
+Se você tiver perguntas, sugestões ou quiser contribuir com o projeto, sinta-se à vontade para entrar em contato comigo em [inserir informações de contato ou link para uma seção de contato].
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Agradecimentos
 
-## Code of Conduct
+Agradeço a todos que contribuíram para o crescimento desta coleção e compartilharam seu conhecimento e paixão pela numismática.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Este README é apenas um ponto de partida. Sinta-se livre para personalizá-lo conforme as necessidades do seu projeto!
