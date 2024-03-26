@@ -1,9 +1,9 @@
 <script setup>
 import GuestLayout from "@/Layouts/GuestLayout.vue";
-import InputError from "@/Components/InputError.vue";
-import InputLabel from "@/Components/InputLabel.vue";
-import PrimaryButton from "@/Components/PrimaryButton.vue";
-import TextInput from "@/Components/TextInput.vue";
+import InputError from "@/Components/Inputs/InputError.vue";
+import InputLabel from "@/Components/Inputs/InputLabel.vue";
+import PrimaryButton from "@/Components/Button/PrimaryButton.vue";
+import TextInput from "@/Components/Inputs/TextInput.vue";
 import { Head, useForm } from "@inertiajs/vue3";
 
 defineProps({
@@ -57,7 +57,7 @@ const submit = () => {
 					:class="{ 'opacity-25': form.processing }"
 					:disabled="form.processing"
 				>
-					Enviar Link de Redefinição de Senha por E-mail  
+					Enviar Link de Redefinição de Senha por E-mail
 				</PrimaryButton>
 			</div>
 		</form>
