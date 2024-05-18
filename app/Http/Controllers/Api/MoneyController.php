@@ -9,24 +9,25 @@ use App\Models\Money;
 
 class MoneyController extends Controller
 {
-    public function index()
+	public function index()
 	{
 		// $money = Money::all();
-		 return response()->json([
-      'money' => Money::all(),
-    ], 200);
-		// return response()->json([ money ], 200);
+		return response()->json([
+			'money' => Money::where([
+				"available_sell" => 1
+			])->get()
+		], 200);
 	}
 
-    public function show(Request $request)
+	public function show($userId)
 	{
 		//  return response()->json([
-    //   'message' => $request->available_sell ? 1 : 0,
-    // ], 200);
+		//   'message' => $request->available_sell ? 1 : 0,
+		// ], 200);
 		$money = Money::where([
-				"user_id" => $request->input('userId'),
-			])->get();
-		return response()->json([ 'money' => $money ], 200);
+			"user_id" => (int) $userId,
+		])->get();
+		return response()->json(['money' => $money], 200);
 	}
 
 	public function store(Request $request)
@@ -52,7 +53,18 @@ class MoneyController extends Controller
 		}
 		// Retorne uma resposta adequada, como um redirecionamento ou uma resposta JSON.
 		// Por exemplo:
-		return response()->json(["status" => "OK" ], 200);
+		return response()->json(["status" => "OK"], 200);
 	}
+	public function changeToMarcketplace($cedulaId)
+	{
+		$id = (int) $cedulaId; 
+		$money = Money::findOrFail($id);
+		$money->update([
+			'available_sell' => $money->available_sell === 0 ? 1 : 0,
+		]);
+		$money->save();
+		
 
+		return response()->json(["status" => "OK"], 200);
+	}
 }
