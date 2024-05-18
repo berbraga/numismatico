@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\MoneyAPI;
+use App\Http\Controllers\Api\MoneyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+
+Route::get("/{userId}", [MoneyController::class, "show"]);
+Route::post("/", [MoneyController::class, "store"]);
+Route::get("/", [MoneyController::class, "index"]);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

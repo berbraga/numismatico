@@ -11,6 +11,7 @@ class Money extends Model
 
 	protected $fillable = [
 		'name',
+		'user_id',
 		'year',
 		'country',
 		'condition',
@@ -19,7 +20,6 @@ class Money extends Model
 		'type',
 		'material', // Added this based on your migration
 		'available_sell', // Added this based on your migration
-		'user_id',
 		'url_img',
 	];
 

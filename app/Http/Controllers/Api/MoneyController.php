@@ -1,0 +1,58 @@
+<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\marketplace;
+use App\Models\Money;
+
+class MoneyController extends Controller
+{
+    public function index()
+	{
+		// $money = Money::all();
+		 return response()->json([
+      'money' => Money::all(),
+    ], 200);
+		// return response()->json([ money ], 200);
+	}
+
+    public function show(Request $request)
+	{
+		//  return response()->json([
+    //   'message' => $request->available_sell ? 1 : 0,
+    // ], 200);
+		$money = Money::where([
+				"user_id" => $request->input('userId'),
+			])->get();
+		return response()->json([ 'money' => $money ], 200);
+	}
+
+	public function store(Request $request)
+	{
+		// Crie uma instância do modelo Money e preencha os campos diretamente a partir do pedido.
+		$money = Money::create([
+			'name' => $request->input('name'),
+			'year' => (int) $request->input('year'),
+			'country' => $request->input('country'),
+			'condition' => $request->input('condition'),
+			'price' => (float) $request->input('price'),
+			'observation' => $request->input('observation'),
+			'type' => $request->input('type'),
+			'material' => $request->input('material'),
+			'available_sell' => $request->available_sell ? 1 : 0,
+			'user_id' => $request->input('user_id'),
+			'url_img' => $request->input('url_img'),
+		]);
+
+		// Verifique se o campo 'available_sell' está definido como verdadeiro.
+		if ($money->available_sell) {
+			$money->marketplace()->create();
+		}
+		// Retorne uma resposta adequada, como um redirecionamento ou uma resposta JSON.
+		// Por exemplo:
+		return response()->json(["status" => "OK" ], 200);
+	}
+
+}
