@@ -28,7 +28,7 @@ class UserController extends Controller
         if ($user && Hash::check($request->password, $user->password)) {
             // Store user ID in session
             Session::put('user_id', $user->id);
-            return response()->json(['message' => 'Login successful', 'user' => $user], 200);
+            return response()->json(['message' => 'Login successful', "status"=> true, 'user' => $user], 200);
         } else {
             return response()->json(['error' => 'Invalid email or password'], 401);
         }
@@ -53,9 +53,9 @@ class UserController extends Controller
             ]);
 
 
-            return response()->json(["message" => 'Registration successful', "user" => $user], 201);
+            return response()->json(["message" => 'Registration successful', "status"=> true, "user" => $user], 200);
         } catch (\Exception $e) {
-            return response()->json(["error" => 'Email already exists or is not valid'], 400);
+            return response()->json(["error" => 'Email already exists or is not valid', "status"=> true], 400);
         }
     }
 
@@ -70,7 +70,7 @@ class UserController extends Controller
         );
 
         if ($status == Password::RESET_LINK_SENT) {
-            return response()->json(['message' => 'Password reset link sent'], 200);
+            return response()->json(['message' => 'Password reset link sent',"status"=> true], 200);
         } else {
             return response()->json(['error' => 'Unable to send reset link'], 400);
         }
@@ -78,19 +78,22 @@ class UserController extends Controller
 
     public function resetpassword(Request $request)
     {
-        // Validate the incoming request
-        $request->validate([
-            
-            'email' => 'required|email',
-            'password' => 'required|confirmed|',
-        ]);
-				$user = User::where('email', $request->email)->first();
 
-				$user->update([
-					'password' => Hash::make($request->password),
+			
+			// Validate the incoming request
+			$request->validate([
+				
+				'email' => 'required|email',
+				'password' => 'required|string|',
+			]);
+			$user = User::where('email', $request->email)->first();
+			
+			$user->update([
+				'password' => Hash::make($request->password),
 				]);
 				$user->save();
-		
+				
+			
 
 
         // // Reset the user's password
@@ -104,7 +107,7 @@ class UserController extends Controller
         // );
 
         // if ($status == Password::PASSWORD_RESET) {
-            return response()->json(['message' => 'Password reset successfully'], 200);
+            return response()->json(['message' => 'Password reset successfully', "status"=> true], 200);
         // } else {
         //     return response()->json(['error' => 'Unable to reset password'], 400);
         // }
@@ -116,13 +119,13 @@ class UserController extends Controller
         Session::forget('user_id');
         Session::regenerate();
 
-        return response()->json(['message' => 'Logout successful'], 200);
+        return response()->json(['message' => 'Logout successful', "status"=> true], 200);
     }
 
     // Method to protect routes
     public function checkAuth(Request $request)
     {
-			return response()->json(['authenticated' =>  'user'], 200);
+			return response()->json(['authenticated' =>  'user', "status"=> true], 200);
         // if (Session::has('user_id')) {
         //     $user = User::find(Session::get('user_id'));
         // } else {
