@@ -13,7 +13,7 @@ class MoneyController extends Controller
 	{
 		// $money = Money::all();
 		return response()->json([
-			'money' => Money::where([
+			'money' => Money::with(["user"])->where([
 				"available_sell" => 1
 			])->get()
 		], 200);

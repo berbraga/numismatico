@@ -30,7 +30,7 @@ class CollectionController extends Controller
 		}
 
 		return response()->json([
-			$this->collectionName => $collections
+			$this->collectionName => array_values(array_unique($collections))
 		], 200);
 	}
 
