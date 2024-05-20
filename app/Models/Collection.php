@@ -5,29 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Money extends Model
+class Collection extends Model
 {
-	use HasFactory;
-protected $table = "money";
+    use HasFactory;
+    protected $table = "collections";
 	protected $fillable = [
 		'name',
-		'user_id',
-		'year',
-		'country',
-		'condition',
-		'price',
 		'observation',
-		'type',
-		'material', // Added this based on your migration
-		'available_sell', // Added this based on your migration
 		'url_img',
 	];
 
 	// If you have relations defined in your database, you can also define them here.
 	// For example, if 'money' belongs to a 'user', you might have something like this:
-  public function collections()
+  public function moneys()
 	{
-		return $this->belongsTo(Collection::class);
+		return $this->belongsTo(Money::class);
 	}
 	public function user()
 	{
