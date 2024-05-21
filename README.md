@@ -40,3 +40,19 @@ Agradeço a todos que contribuíram para o crescimento desta coleção e compart
 ---
 
 Este README é apenas um ponto de partida. Sinta-se livre para personalizá-lo conforme as necessidades do seu projeto!
+
+
+
+
+
+necessario: php8.1, composer
+
+rodar : composer require 
+
+php artisan migrate
+
+
+para rodar: php artisan serve
+
+
+tera que rodar o projeto do front
