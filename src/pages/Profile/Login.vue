@@ -18,10 +18,10 @@ q-card(color="white" class="q-pa-md container")
             @click="isPwd = !isPwd"
           )
       div(class="flex")
-        q-btn(label="Entrar" type="submit" color="primary" class="col-3")
+        q-btn(label="Entrar" :loading="loading" type="submit" color="primary" class="col-3")
         q-space
         router-link(to="/register" class="col q-mx-md")
-          q-btn(color="primary" label="register" @click="Login" dense class="" flat  :ripple="{  center: true }" )
+          q-btn(color="primary"  label="register"  dense class="" flat  :ripple="{  center: true }" )
 </template>
 
 <script setup>
@@ -32,6 +32,7 @@ const password = ref("");
 const isPwd = ref(true);
 const lodingLogin = ref(false);
 const lodingNewAccont = ref(false);
+const loading = ref(false);
 const Login = () => {
   lodingLogin.value = true;
 };
@@ -40,6 +41,7 @@ const NewAccont = () => {
 };
 
 const onSubmit = async () => {
+  loading.value = true;
   console.clear();
   const body = {
     email: email.value,

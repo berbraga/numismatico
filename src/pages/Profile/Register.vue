@@ -15,7 +15,7 @@ q-card(color="white" class="q-pa-md container")
             class="cursor-pointer"
             @click="isPwd = !isPwd"
           )
-      q-btn(label="Enviar" type="submit" color="primary" class="col-3")
+      q-btn(label="Enviar" :loading="loading" type="submit" color="primary" class="col-3")
       router-link(to="/" class="col q-mx-md")
         q-btn(color="primary" label="Voltar" @click="NewAccont" dense class="" flat :ripple="{  center: true }")
     //router-link( to="/forgot-password")
@@ -37,6 +37,7 @@ const password = ref("");
 const isPwd = ref(true);
 const lodingLogin = ref(false);
 const lodingNewAccont = ref(false);
+const loading = ref(false);
 const Login = () => {
   lodingLogin.value = true;
 };
@@ -45,6 +46,7 @@ const NewAccont = () => {
 };
 
 const onSubmit = async () => {
+  loading.value = true;
   console.clear();
   const body = {
     name: name.value,

@@ -15,7 +15,7 @@ q-card(color="white" class="q-pa-md container")
               class="cursor-pointer"
               @click="isPwd = !isPwd"
             )
-        q-btn(label="Confirmar" type="submit" color="primary" class="col-3")
+        q-btn(label="Confirmar" :loading="loading" type="submit" color="primary" class="col-3")
         router-link(to="/" class="col q-mx-md")
           q-btn(color="primary" label="Voltar" @click="NewAccont" dense class="" flat :ripple="{  center: true }")
 
@@ -33,8 +33,10 @@ const password = ref("");
 const isPwd = ref(true);
 const lodingLogin = ref(false);
 const lodingNewAccont = ref(false);
+const loading = ref(false);
 
 const onSubmit = async () => {
+  loading.value = true; 
   console.clear();
   const body = {
     password: password.value,
