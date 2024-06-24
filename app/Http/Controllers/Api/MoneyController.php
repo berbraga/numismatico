@@ -53,7 +53,7 @@ class MoneyController extends Controller
 		}
 		// Retorne uma resposta adequada, como um redirecionamento ou uma resposta JSON.
 		// Por exemplo:
-		return response()->json(["status" => "OK"], 200);
+		return response()->json($money, 200);
 	}
 	public function changeToMarcketplace($cedulaId)
 	{

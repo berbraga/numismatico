@@ -14,6 +14,7 @@ class CollectionController extends Controller
 	 * Display a listing of the resource.
 	 */
 	private $collectionName = 'collection';
+	
 	public function index($userId)
 	{
 		$tabelaoModel = tabelao::where([
