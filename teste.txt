@@ -1,0 +1,6 @@
+
+./vendor/bin/phpunit tests/Feature/CollectionControllerApiTest.php
+
+./vendor/bin/phpunit tests/Feature/MoneyControllerApiTest.php
+
+./vendor/bin/phpunit tests/Unit/UserControllerTest.php
